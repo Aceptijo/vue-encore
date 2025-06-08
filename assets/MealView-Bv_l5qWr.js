@@ -1,0 +1,1 @@
+import{i as r,o as a}from"./index-B-yXozen.js";const s=(e,t)=>{const c=e.__vccOpts||e;for(const[o,n]of t)c[o]=n;return c},_={};function l(e,t){return a(),r("div",null,"meal page")}const i=s(_,[["render",l]]);export{i as default};
