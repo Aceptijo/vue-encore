@@ -1,0 +1,39 @@
+@import 'flowbite';
+@import "tailwindcss";
+@import "flowbite-vue/index.css";
+
+@tailwind utilities;
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-weight: normal;
+  background-color: #1b1b1f;
+  color: #DFDFD6;
+  font-family: Inter, sans-serif;
+}
+
+body,
+html,
+#app {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1b1b1f;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6a7282;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
