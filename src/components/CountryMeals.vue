@@ -25,14 +25,14 @@
 
 <script setup>
 import MealCard from '@/components/MealCard.vue'
-import { useMealsByCountryStore } from '@/stores/mealsByCountry.js'
+import { useMealsStore } from '@/stores/meals.js'
 import { computed, nextTick, onMounted, ref } from 'vue'
 import { useCountriesStore } from '@/stores/countries.js'
 import { useSearchMealsStore } from '@/stores/searchMeals.js'
 
 const countries = computed(() => countriesStore.data.map((item) => item.strArea))
 
-const mealsStore = useMealsByCountryStore()
+const mealsStore = useMealsStore()
 const countriesStore = useCountriesStore()
 const searchStore = useSearchMealsStore()
 

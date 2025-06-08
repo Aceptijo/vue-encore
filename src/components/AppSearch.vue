@@ -34,12 +34,12 @@ import { useCountriesStore } from '@/stores/countries.js'
 import { useCategoriesStore } from '@/stores/categories.js'
 import { useSearchMealsStore } from '@/stores/searchMeals.js'
 import { onMounted } from 'vue'
-import { useMealsByCountryStore } from '@/stores/mealsByCountry.js'
+import { useMealsStore } from '@/stores/meals.js'
 
 const countriesStore = useCountriesStore()
 const categoriesStore = useCategoriesStore()
 const searchStore = useSearchMealsStore()
-const mealsStore = useMealsByCountryStore()
+const mealsStore = useMealsStore()
 
 const categories = computed(() => {
   return categoriesStore.data.map((category) => ({
@@ -74,6 +74,15 @@ watch(country, async (newCountry) => {
   mealsStore.clearData()
   mealsStore.isFiltered = true
   await mealsStore.fetchMealsByCountry(newCountry)
+})
+
+watch(category, async (newCategory) => {
+  if (!newCategory) return
+
+  searchStore.query = ''
+  mealsStore.clearData()
+  mealsStore.isFiltered = true
+  await mealsStore.fetchMealsByCategory(newCategory)
 })
 
 onMounted(() => {
